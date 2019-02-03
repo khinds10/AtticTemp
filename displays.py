@@ -16,7 +16,6 @@ device = ssd1306(port=1, address=0x3C)
 ## Raspberry Pi with DHT22 sensor - connected to GPIO18 / Pin 12
 sensor = Adafruit_DHT.DHT22
 pin = 18
-humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
 # get current date and time
 date=dt.datetime.now()
