@@ -236,8 +236,6 @@ DHT22 temperature-humidity sensor
 > DATA -> GPIO 18 / PIN 12
 >
 
-WIRING DIAGRAM HERE
-
 ![Pi Wiring Diagram](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/wiringdiagram.png "Pi Wiring Diagram")
 
 ![Pi Wiring](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/wiring.jpg "Pi Wiring")
