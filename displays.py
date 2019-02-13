@@ -10,13 +10,12 @@ from oled.render import canvas
 from PIL import ImageFont
 
 # mono 8 bit font
-font = ImageFont.truetype('fonts/vcr.ttf', 50)
+font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 50)
 device = ssd1306(port=1, address=0x3C)
 
 ## Raspberry Pi with DHT22 sensor - connected to GPIO18 / Pin 12
 sensor = Adafruit_DHT.DHT22
 pin = 18
-humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
 # get current date and time
 date=dt.datetime.now()
@@ -38,17 +37,23 @@ insideHumidity = int(avgHumidity)
 # show temp on the 1306 display
 with canvas(device) as draw:
     if insideTemperature > 100:
-        font = ImageFont.truetype('fonts/vcr.ttf', 50)
-        draw.text((10, 10),    str(insideTemperature) + '*',  font=font, fill=255)
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 50)
+        draw.text((0, 10),    str(insideTemperature),  font=font, fill=255)
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 30)
+        draw.text((90, 15),    str("*"),  font=font, fill=255)
     elif insideTemperature >= 0:
-        font = ImageFont.truetype('fonts/vcr.ttf', 60)
-        draw.text((20, 10),    str(insideTemperature) + '*',  font=font, fill=255)    
-    else: 
-        font = ImageFont.truetype('fonts/vcr.ttf', 50)
-        draw.text((10, 10),    str(insideTemperature) + '*',  font=font, fill=255)
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 60)
+        draw.text((0, 10),    str(insideTemperature),  font=font, fill=255)
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 40)
+        draw.text((70, 15),    str("*"),  font=font, fill=255)       
+    else:
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 50)
+        draw.text((0, 10),    str(insideTemperature),  font=font, fill=255)
+        font = ImageFont.truetype('/home/pi/AtticTemp/fonts/vcr.ttf', 30)
+        draw.text((90, 15),    str("*"),  font=font, fill=255)
 
 # get current forecast from location
-weatherInfo = json.loads(subprocess.check_output(['curl', settings.weatherAPIURL + settings.weatherAPIKey + '/' + str(settings.latitude) + ',' + str(settings.longitude) + '?lang=en']))
+weatherInfo = json.loads(subprocess.check_output(['curl', settings.weatherAPIURL]))
 currentConditions = weatherInfo['currently']
 icon = str(currentConditions['icon'])
 apparentTemperature = str(int(currentConditions['apparentTemperature']))
