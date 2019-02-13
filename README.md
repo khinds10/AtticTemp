@@ -14,17 +14,17 @@ https://www.raspberrypi.org/downloads/raspbian/
 >Insert the microSD to your computer via USB adapter and create the disk image using the `dd` command
 >
 > Locate your inserted microSD card via the `df -h` command, unmount it and create the disk image with the disk copy `dd` command
-> 
+>
 > $ `df -h`
 > */dev/sdb1       7.4G   32K  7.4G   1% /media/XXX/1234-5678*
-> 
+>
 > $ `umount /dev/sdb1`
-> 
+>
 > **Caution: be sure the command is completely accurate, you can damage other disks with this command**
-> 
+>
 > *if=location of RASPBIAN JESSIE LITE image file*
 > *of=location of your microSD card*
-> 
+>
 > $ `sudo dd bs=4M if=/path/to/raspbian-jessie-lite.img of=/dev/sdb`
 > *(note: in this case, it's /dev/sdb, /dev/sdb1 was an existing factory partition on the microSD)*
 
@@ -194,7 +194,7 @@ Run the demo to confirm your display is in working order
 SUPPLIES LIST HERE
 
 ## Build and wire the device
-    
+
 **SSD1306 Display**
 
 > GND -> GND
@@ -204,7 +204,7 @@ SUPPLIES LIST HERE
 > CLK -> SCL
 >
 > VCC -> 3V
-    
+
 **Digole Display**
 
 > GND -> GND
@@ -214,7 +214,7 @@ SUPPLIES LIST HERE
 > CLK -> SCL
 >
 > VCC -> 3V
-    
+
 **DHT22 Humidistat**
 
 > VCC -> 5V
@@ -223,7 +223,7 @@ SUPPLIES LIST HERE
 >
 > DATA -> GPIO 18 / PIN 12
 >
-    
+
 WIRING DIAGRAM HERE
 
 ## Configure Application to run correctly in settings.py config file
@@ -253,7 +253,9 @@ Find the file `settings.py` and adjust to your current settings
 
 Add the following lines:
 
-`*/7 python /home/pi/AtticTemp/displays.py`
+`*/7 * * * * python /home/pi/AtticTemp/displays.py`
+
+`*/10 * * * * python /home/pi/AtticTemp/temp-check.py`
 
 ## OPTIONAL: Temp Logger to API script each 10 minutes
 
@@ -300,3 +302,4 @@ Now rebuild (ignore the errors) below to have your new image render with the fol
 
 >$ `chmod +x ../../digole`
 
+# FINISHED!
