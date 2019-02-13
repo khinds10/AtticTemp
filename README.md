@@ -295,8 +295,6 @@ Add the following lines:
 
 `*/7 * * * * python /home/pi/AtticTemp/displays.py`
 
-`*/10 * * * * python /home/pi/AtticTemp/temp-check.py`
-
 ## OPTIONAL: Temp Logger to API script each 10 minutes
 
 >$ `crontab -e`
