@@ -3,9 +3,7 @@ High tolerance temperature gauge and climate logger for your attic or other outd
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
-PROJECT PICTURE HERE
-
-![XYZ](XYZ "XYZ")
+![Completed](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/Complete.png "Completed")
 
 Download "RASPBIAN JESSIE LITE"
 https://www.raspberrypi.org/downloads/raspbian/
