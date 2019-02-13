@@ -5,7 +5,7 @@ High tolerance temperature gauge and climate logger for your attic or other outd
 
 PROJECT PICTURE HERE
 
-![XYZ](https://raw.githubusercontent.com/khinds10/EnvironmentClock/master/images/XYZ.jpg "XYZ")
+![XYZ](XYZ "XYZ")
 
 Download "RASPBIAN JESSIE LITE"
 https://www.raspberrypi.org/downloads/raspbian/
@@ -191,9 +191,23 @@ Run the demo to confirm your display is in working order
 
 ## Supplies Needed
 
-SUPPLIES LIST HERE
+RaspberriPi Zero
 
-## Build and wire the device
+![RaspberriPi Zero](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/PiZero.jpg "RaspberriPi Zero")
+
+DHT22 temperature-humidity sensor
+
+![DHT22](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/DHT22.png "DHT22")
+
+0.96" I2C IIC SPI Serial 12864 OLED LCD LED White Display Module 
+
+![SD1306](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/SD1306.png "SD1306")
+
+2.4" 400x240 16:9 Serial:UART/I2C/SPI TFT Touchscreen Display 
+
+![Digole Display](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/digole.png "Digole Display")
+
+## Wire the device
 
 **SSD1306 Display**
 
@@ -225,6 +239,32 @@ SUPPLIES LIST HERE
 >
 
 WIRING DIAGRAM HERE
+
+![Pi Wiring](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/wiring.jpg "Pi Wiring")
+
+## Build the device
+
+Cut Plexiglass to fit the front of the device under the 3D printed frame
+
+![Cut Plexiglass](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/cut-glass.jpg "Cut Plexiglass")
+
+Mount the glass with screws through the 3D printed frame
+
+![Mount Glass](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/mount-glass.jpg "Mount Glass")
+
+Hot Glue Components against the front panel
+
+![Hot Glue](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/glue-components.jpg "Hot Glue")
+
+Wire Unit inside
+
+![Inside Unit](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/insides.jpg "Inside Unit")
+
+Mount the back and it should be ready to go
+
+![Mount Back](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/mount-back.jpg "Mount Back")
+
+
 
 ## Configure Application to run correctly in settings.py config file
 
@@ -303,3 +343,6 @@ Now rebuild (ignore the errors) below to have your new image render with the fol
 >$ `chmod +x ../../digole`
 
 # FINISHED!
+
+![Finished](https://raw.githubusercontent.com/khinds10/AtticTemp/master/images/Finished.jpg "Finished")
+
